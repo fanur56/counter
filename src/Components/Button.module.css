@@ -1,0 +1,6 @@
+.button {
+    background-color: cornflowerblue;
+    margin: 2px;
+    border-radius: 10px;
+    border:solid cornflowerblue 2px;
+}

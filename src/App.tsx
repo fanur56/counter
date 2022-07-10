@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Button} from "./Components/Button";
+import {Scoreboard} from "./Components/Scoreboard";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    let [count, setCount] = useState<number>(0)
+
+    const incCounter = () => {
+        count++
+        setCount(count)
+    }
+
+    const resetCounter = () => {
+        setCount(0)
+    }
+
+    return (
+        <div className={"App"}>
+            <Scoreboard count={count}/>
+            <Button incCounter={incCounter}
+                    resetCounter={resetCounter}
+                    count={count}/>
+        </div>
+    );
 }
 
 export default App;
